@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay">
+        <div class="auth-container">
+            <h1>Добро пожаловать!</h1>
+            <!-- Круг для загрузки аватара -->
+            <div class="avatar-upload">
+                <img id="avatar-preview" src="assets/default_avatar.png" alt="Аватар">
+                <input type="file" id="avatar" accept="image/*" style="display: none;">
+            </div>
+            <input type="text" id="nickname" placeholder="Введите никнейм">
+            <button id="login-button">Войти</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

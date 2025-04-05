@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="assets/logo (3).png" alt="Логотип Primex">  <!--  ОБНОВЛЕН ПУТЬ К ЛОГОТИПУ -->
+            </a>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+           <nav class="nav-links">
+                <ul>
+                    <li><a href="main.html">Главная</a></li>
+                    <li><a href="order.html">Заказ</a></li>
+                </ul>
+            </nav>
+
+             <div class="profile-section">
+                <img id="profile-avatar" src="assets/default_avatar.png" alt="Аватар" class="profile-avatar">
+            </div>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Добро пожаловать, <span id="welcome-nickname"></span>!</h1>
+            <p>Ваш лучший выбор для развития бизнеса.</p>
+        </div>
+    </section>
+    
+    <!-- Плавающий аудиоплеер -->
+    <!-- Плавающий аудиоплеер -->
+    <!-- Плавающий аудиоплеер -->
+    <div id="floating-music-player">
+        <img id="record-image" src="assets/record.jpg" alt="Пластинка">
+        <audio id="audio-player" src="assets/song.mp3" preload="auto"></audio>
+        <button id="play-pause-button">
+            <i class="fas fa-play"></i>  <!-- Иконка Play по умолчанию -->
+        </button>
+    </div>
+    
+
+    </div>
+    <section class="advantages">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="advantage-grid">
+                <div class="advantage">
+                    <i class="fas fa-rocket fa-3x"></i>
+                    <h3>Быстрый старт</h3>
+                    <p>Мы предлагаем быстрые решения для вашего бизнеса.</p>
+                </div>
+                <div class="advantage">
+                    <i class="fas fa-gem fa-3x"></i>
+                    <h3>Высокое качество</h3>
+                    <p>Наши продукты отличаются высоким качеством и надежностью.</p>
+                </div>
+                <div class="advantage">
+                    <i class="fas fa-headset fa-3x"></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Наша команда поддержки всегда готова помочь вам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Primex Web Design, Copyright &copy; 2024</p>
+        </div>
+    </footer>
+    <div class="support-circle">
+        ?
+    </div>
+      <div class="support-overlay">
+        <div class="support-container">
+            <div class="support-header">
+                <h2>Поддержка</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="chat-history">
+                <!-- Сообщения чата будут добавляться сюда -->
+            </div>
+            <div class="support-input-area">
+                <input type="text" placeholder="Введите сообщение...">
+                <button class="send-button">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

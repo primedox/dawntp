@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница заказа</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="assets/logo.png" alt="Логотип">
+                Primex
+            </a>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="main.html">Главная</a></li>
+                    <li><a href="order.html">Заказ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="order-form">
+        <div class="container">
+            <h2>Оформление заказа</h2>
+            <form id="order-form">
+                <label for="nickname">Никнейм:</label>
+                <input type="text" id="nickname" name="nickname" required>
+
+                <label for="phone">Физический номер (код страны):</label>
+                <input type="

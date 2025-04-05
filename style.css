@@ -1,0 +1,687 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Заголовок (Header) */
+header {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 3px solid #bb86fc;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-start; /* Начинаем выравнивание слева */
+    align-items: center;
+    position: relative; /* Добавляем relative для позиционирования аватара */
+}
+
+/* Логотип */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Занимаем все пространство справа от логотипа */
+}
+
+.logo img {
+    height: auto;
+    width: 180px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Навигация */
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #bb86fc;
+}
+
+/* Гамбургер-меню */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto; /* Перемещаем гамбургер-меню вправо */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Скрываем обычную навигацию на мобильных устройствах */
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #1e1e1e;
+  padding: 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.nav-links.open {
+    display: block; /* Показываем при добавлении класса .open */
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+}
+
+/* Профиль */
+.profile-section {
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; /* Размещаем по центру */
+    transform: translateX(-50%); /* Точно выравниваем по центру */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px; /* Увеличиваем размер аватара */
+    height: 70px; /* Увеличиваем размер аватара */
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #bb86fc; /* Добавляем рамку */
+}
+
+/* Поддержка (кружок) */
+.support-circle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #bb86fc;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.support-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Поддержка (оверлей) */
+.support-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.support-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 600px;
+}
+
+.support-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.support-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-history {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.message {
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #bb86fc;
+    color: #ffffff;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #292929;
+    color: #ffffff;
+    text-align: left;
+}
+
+.support-input-area {
+    display: flex;
+}
+
+.support-input-area input {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+}
+
+.support-input-area button {
+    background: #bb86fc;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.support-input-area button:hover {
+    background: #9c6dde;
+}
+
+/* Преимущества (как и раньше) */
+.advantages {
+    background: #1e1e1e;
+    padding: 3rem 0;
+}
+
+.advantages h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.advantage {
+    background: #292929;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.advantage:hover {
+    transform: translateY(-5px);
+}
+
+.advantage i {
+    font-size: 3rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+}
+
+.advantage h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.advantage p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+/* Форма заказа */
+.order-form {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.order-form h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background: #292929;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.order-form button {
+    background: #bb86fc;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.order-form button:hover {
+    background: #9c6dde;
+}
+/* Footer */
+footer {
+    background: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 3px solid #bb86fc;
+    position: relative;
+}
+
+footer a {
+    color: #bb86fc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+/* Дополнительные стили для responsive */
+@media (max-width: 768px) {
+    /* Изменяем навигацию для мобильных устройств */
+    header .container {
+        flex-direction: row; /* Возвращаем flex-direction: row */
+        align-items: center; /* Выравниваем элементы по вертикали */
+    }
+
+    /* Скрываем обычную навигацию */
+    header nav {
+        display: none;
+    }
+
+    /* Показываем гамбургер-меню */
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin-left: auto; /* Гамбургер-меню справа */
+    }
+
+    /* Перемещаем аватар вправо после гамбургера */
+    .profile-section {
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем сдвиг */
+        width: 50px; /* Уменьшаем размер аватара для мобильных */
+        height: 50px; /* Уменьшаем размер аватара для мобильных */
+        margin: 0; /* Убираем отступы */
+    }
+
+    .profile-avatar {
+        width: 100%;
+        height: 100%;
+    }
+    /* Меняем стили логотипа для мобильных устройств */
+    .logo {
+        margin-bottom: 1rem; /* Добавляем отступ снизу */
+        font-size: 1.5rem; /* Уменьшаем размер логотипа на мобильных устройствах */
+    }
+
+     /* Поддержка (кружок) */
+    .support-circle {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* Дополнительные стили для адаптивности */
+    .container {
+        width: 95%;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    #showcase {
+        padding: 2rem 0;
+    }
+
+    #showcase h1 {
+        font-size: 2rem;
+    }
+
+    .advantage-grid {
+        grid-template-columns: 1fr;
+    }
+/* Стилизация окна авторизации */
+    .auth-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* Общие стили для окна авторизации и оверлея поддержки */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Убедитесь, что оверлей находится поверх всего */
+}
+
+/* Стилизация окна авторизации */
+.auth-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.auth-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="file"] {
+    width: 80%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background: #292929;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.auth-container button {
+    background: #bb86fc;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+    background: #9c6dde;
+}
+.avatar-upload {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    cursor: pointer;
+    border: 2px solid #bb86fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-upload img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Исправление адаптивности для auth-container */
+.auth-container {
+  width: 90%;
+  max-width: 300px; /* Уменьшаем максимальную ширину для лучшей адаптации */
+}
+
+/* Дополнительные стили для responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Немного уменьшаем общий размер шрифта */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Уменьшаем размер логотипа */
+    }
+    .logo img {
+        width: 140px; /* УВЕЛИЧЕН РАЗМЕР ДЛЯ МОБИЛЬНЫХ */
+    }
+}
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    object-fit: cover;
+    border: 2px solid #bb86fc; /* Добавляем рамку */
+}
+
+#welcome-nickname { /* Стили для имени пользователя */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+/* Если у вас есть элемент для отображения баланса: */
+.balance {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-left: 10px;
+}
+#floating-music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 70px; /* Можно настроить размер */
+    height: 70px; /* Можно настроить размер */
+    border-radius: 50%;
+    background-color: #333; /* Цвет фона плеера */
+    overflow: hidden; /* Чтобы обрезать изображение пластинки */
+    cursor: grab;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#floating-music-player:active {
+    cursor: grabbing;
+}
+
+#record-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Чтобы изображение заполняло контейнер */
+    animation: rotate 5s linear infinite; /* Анимация вращения */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#play-pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001; /* Поверх изображения пластинки */
+}
+
+#play-pause-button:focus {
+    outline: none;
+}
+
+#floating-music-player.paused #record-image {
+    animation-play-state: paused;
+}
+#floating-music-player.paused #play-pause-button i.fas.fa-play {
+  display: block; /* Ensure play icon is visible */
+}
+
+#floating-music-player.paused #play-pause-button i.fas.fa-pause {
+    display: none; /* Hide pause icon when paused */
+}
+i.fas.fa-play {
+    display: block;
+}
+i.fas.fa-pause {
+    display: none;
+}
+#delete-button {
+    position: absolute;
+    top: 5px; /* Расположение кнопки удаления */
+    right: 5px; /* Расположение кнопки удаления */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%; /* Чтобы была круглая */
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Скрываем кнопку по умолчанию */
+    transition: opacity 0.3s ease;
+}
+
+#floating-music-player:hover #delete-button {
+    opacity: 1; /* Показываем кнопку при наведении */
+}
